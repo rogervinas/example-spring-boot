@@ -1,0 +1,7 @@
+FROM zulu-crac:latest
+
+COPY target/example-spring-boot-0.0.1-SNAPSHOT.jar /opt/mnt/target/
+
+COPY crac /opt/mnt/crac
+
+ENTRYPOINT java -XX:CRaCRestoreFrom=/opt/mnt/crac
